@@ -36,7 +36,7 @@ DataSeries can also represent sets well as a bitemporal sequence of add and remo
 These are a set of fixed decimal place numbers represented internally as a long.
 As well as having no rounding error they also compress well in the DataSeries for price and quantity time series.
 ## Slim Collections
-Bitemporal uses ListSlim, SetSlim, and MapSlim. These are increased performance and reduced memory slim append only versions of common collections that also have a useful property that they can be used lock free reading while a write is being performed.
+Bitemporal uses ListSlim, SetSlim, and MapSlim. These are increased performance, reduced memory, append only versions of common collections. Thay also have a useful property that they can be used lock free for reading while a write is being performed.
 
 This plus the transactional data model means concurrency is very simple and reads are self-consistent.
 ## Size

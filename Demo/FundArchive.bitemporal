@@ -1,0 +1,21 @@
+﻿Tx
+User User
+Time Time
+File string
+
+User
+Name string
+
+Asset
+Name string
+Currency Asset
+Price Fixed2
+ISIN string
+Ticker string
+Sector string
+Country string
+Positions Position Set
+
+Position
+Asset Asset
+Quantity Fixed2

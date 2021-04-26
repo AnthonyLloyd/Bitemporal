@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <LangVersion>9.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <WarningLevel>5</WarningLevel>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <OutputType>Exe</OutputType>
+        <StartupObject>Demo.ConsoleApp</StartupObject>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Bitemporal\Bitemporal.csproj" />
+        <ProjectReference Include="..\Bitemporal.SourceGenerator\Bitemporal.SourceGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+        <AdditionalFiles Include="FundArchive.bitemporal" />
+    </ItemGroup>
+</Project>

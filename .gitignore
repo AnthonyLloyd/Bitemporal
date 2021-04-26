@@ -1,0 +1,6 @@
+bin
+obj
+data/iShares
+.vs
+.ionide
+.vscode

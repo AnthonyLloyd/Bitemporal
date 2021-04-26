@@ -215,9 +215,9 @@ type TestBuilder(name:string) =
     member _.Bind(g:#Gen<'a>,f:'a->Test,
       [<CallerLineNumberAttribute;Optional;DefaultParameterValue 0>]line:int) =
         Test(nameList, fun p c ->
-            let struct (a,s) = g.Generate p
+            let (a,s) = g.Generate(p, null)
             let i = sizeMins.IndexOf line
-            if i >= 0 && (sizeMins.Value i).IsLessThan s then c None
+            if i >= 0 && Size.IsLessThan(sizeMins.Value i, s) then c None
             else
                 let (Test(_,tf)) = f a
                 tf p (function
@@ -226,7 +226,7 @@ type TestBuilder(name:string) =
                             if TestResult.hasErrs r then
                                 //lock sizeMins (fun () ->
                                     let m = &sizeMins.GetValueOrNullRef i
-                                    if isNull m || not(m.IsLessThan s) then
+                                    if isNull m || not(Size.IsLessThan(m, s)) then
                                         m <- s
                                         Some r
                                     else None

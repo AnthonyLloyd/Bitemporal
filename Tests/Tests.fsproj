@@ -5,7 +5,7 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="CsCheck" Version="1.1.2" />
+    <PackageReference Include="CsCheck" Version="2.1.0" />
     <ProjectReference Include="..\Demo\Demo.csproj" />
     <ProjectReference Include="..\Bitemporal\Bitemporal.csproj" />
     <Compile Include="TestFramework.fs" />
